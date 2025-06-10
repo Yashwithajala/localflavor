@@ -1,134 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Local Flavors</title>
- <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Flavor Finder - South India</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
-    <h1>🍲 Local Flavors</h1>
-    <p>Explore famous dishes by Indian states & how to prepare them</p>
+  <header style="display: flex; align-items: center; gap: 20px;">
+  <img src="lf.png" alt="Flavor Finder Logo" style="height: 170px;">
+  <div>
+    
+    <h1>Flavor Finder</h1>
+    <p>Your map to regional flavor — curated, clickable, craveable!</p>
   </header>
 
   <nav>
     <div>
+      <a href="#andhra">Andhra Pradesh</a>
       <a href="#telangana">Telangana</a>
-      <a href="#maharashtra">Maharashtra</a>
-      <a href="#karnataka">Karnataka</a>
-      <a href="#gujarat">Gujarat</a>
+      <a href="#tamilnadu">Tamil Nadu</a>
       <a href="#kerala">Kerala</a>
+      <a href="#karnataka">Karnataka</a>
     </div>
     <input type="text" id="searchInput" placeholder="Search dishes...">
+    <button onclick="toggleTheme()">🌓 Toggle Theme</button>
   </nav>
 
-  <main id="content">
-
-    <!-- Telangana -->
-    <section class="place-section" id="telangana">
-      <h2 class="section-title">Hyderabad, Telangana</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Biryani</h3>
-          <small>Paradise</small>
-          <p>Marinated meat & saffron rice slow-cooked ("dum") to perfection.</p>
-          <button onclick="alert('Recipe coming soon!')">View Recipe</button>
-        </div>
-        <div class="card">
-          <h3>Double Ka Meetha</h3>
-          <small>Shah Ghouse</small>
-          <p>Rich bread pudding made with ghee, saffron and dry fruits.</p>
-          <button onclick="alert('Recipe coming soon!')">View Recipe</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Maharashtra -->
-    <section class="place-section" id="maharashtra">
-      <h2 class="section-title">Mumbai, Maharashtra</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Pav Bhaji</h3>
-          <small>Sardar Pav Bhaji</small>
-          <p>Spicy mashed veggie curry with buttered bread rolls.</p>
-          <button onclick="alert('Recipe coming soon!')">View Recipe</button>
-        </div>
-        <div class="card">
-          <h3>Pani Puri</h3>
-          <small>Juhu Beach</small>
-          <p>Stuffed crispy puris with spicy potatoes & tangy water.</p>
-          <button onclick="alert('Recipe coming soon!')">View Recipe</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Karnataka -->
-    <section class="place-section" id="karnataka">
-      <h2 class="section-title">Bangalore, Karnataka</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Masala Dosa</h3>
-          <small>CTR, Malleshwaram</small>
-          <p>Rice crepes stuffed with spiced potatoes.</p>
-          <button onclick="alert('Recipe coming soon!')">View Recipe</button>
-        </div>
-        <div class="card">
-          <h3>Ragi Mudde</h3>
-          <small>Traditional Karnataka</small>
-          <p>Millet balls served with spicy gravy (saaru).</p>
-          <button onclick="alert('Recipe coming soon!')">View Recipe</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gujarat -->
-    <section class="place-section" id="gujarat">
-      <h2 class="section-title">Ahmedabad, Gujarat</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Gujarati Thali</h3>
-          <small>Gordhan Thal</small>
-          <p>Dal, kadhi, rotis, rice, farsan and sweet.</p>
-          <button onclick="alert('Recipe coming soon!')">View Recipe</button>
-        </div>
-        <div class="card">
-          <h3>Dhokla</h3>
-          <small>Snack</small>
-          <p>Soft, steamed fermented gram flour cake.</p>
-          <button onclick="alert('Recipe coming soon!')">View Recipe</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Kerala -->
-    <section class="place-section" id="kerala">
-      <h2 class="section-title">Kochi, Kerala</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Fish Moilee</h3>
-          <small>Fort Kochi</small>
-          <p>Fish in coconut milk with curry leaves & turmeric.</p>
-          <button onclick="alert('Recipe coming soon!')">View Recipe</button>
-        </div>
-        <div class="card">
-          <h3>Puttu & Kadala</h3>
-          <small>Breakfast Combo</small>
-          <p>Steamed rice flour with black chickpea curry.</p>
-          <button onclick="alert('Recipe coming soon!')">View Recipe</button>
-        </div>
-      </div>
-    </section>
-<div class="card">
-  <h3>🍛 Biryani</h3>
-  <small>Paradise</small>
-  <p>Marinated meat & saffron rice slow-cooked ("dum") to perfection.</p>
-  <div class="rating">★★★★½ <span>(4.5)</span></div>
-  <button onclick="alert('Recipe coming soon!')">View Recipe</button>
-</div>
-
-
-    <!-- Map Section -->
+  <main id="mainContent"></main>
+  <!-- Map Section -->
     <div class="map-container">
       <h2>📍 Sample Food Spot</h2>
       <iframe 
@@ -140,10 +43,7 @@
   </main>
 
   <footer>
-    &copy; 2025 Local Flavors • Built with taste and tradition 🍴
+    &copy; 2025 Flavor Finder | Explore the taste of the South 🌶️
   </footer>
-
-
-  <script src="script.js"></script>
 </body>
 </html>
