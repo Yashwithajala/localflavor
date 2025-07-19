@@ -1,57 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Flavor Finder - South India</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="style.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Flavor Finder - South Indian Cuisine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
-  <header style="display: flex; align-items: center; gap: 20px; padding: 10px;">
-    <img src="lf.png" alt="Flavor Finder Logo" style="height: 150px;">
-    <div>
-      <h1>Flavor Finder</h1>
-      <p>Your map to regional flavor — curated, clickable, craveable!</p>
+    <header>
+        <div class="logo">
+            <img src="lf.png" alt="Local Flavor Finder Logo">
+        <h1>Local Flavor Finder</h1>
+        <p class="tagline">Discover authentic South Indian culinary treasures</p>
+        </div>  
+        <div class="search-container">
+            <div class="search-bar">
+                <input type="text" placeholder="Search for dishes, ingredients or locations...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="state-filters">
+                <button class="state-btn active" data-state="all">All States</button>
+                <button class="state-btn" data-state="kerala">Kerala</button>
+                <button class="state-btn" data-state="tamilnadu">Tamil Nadu</button>
+                <button class="state-btn" data-state="andhra">Andhra Pradesh</button>
+                <button class="state-btn" data-state="telangana">Telangana</button>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <h2 class="section-title">Featured Dishes</h2>
+        
+        <div class="dishes-grid" id="dishesContainer">
+            <!-- Dish cards will be inserted here by JavaScript -->
+        </div>
+
+         <section class="map-section">
+        <h2 class="section-title">Explore Dish Origins</h2>
+        <div id="map"></div> <!-- Map container -->
+    </section>
+    </main>
+    
+    
+    <div class="recipe-modal" id="recipeModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="" alt="Dish Image" class="modal-image" id="modalImage">
+            <div class="modal-body">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <div class="modal-subtitle">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="modalLocation"></span>
+                </div>
+                
+                <div class="ingredients">
+                    <h3 class="section-heading">Ingredients</h3>
+                    <ul id="ingredientsList"></ul>
+                </div>
+                
+                <div class="instructions">
+                    <h3 class="section-heading">Instructions</h3>
+                    <ol id="instructionsList"></ol>
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
+    
+    <footer>
+        <div class="footer-logo">
+            <img src="lf.png" alt="Local Flavor Finder Logo">
+        </div>
+        <p>Discover the taste of South India</p>
+        
+        
+        <p class="copyright">© 2025 Local Flavor Finder. All rights reserved.</p>
+    </footer>
 
-  <nav>
-    <div>
-      <a href="#andhrapradesh">Andhra Pradesh</a>
-      <a href="#telangana">Telangana</a>
-      <a href="#tamilnadu">Tamil Nadu</a>
-      <a href="#kerala">Kerala</a>
-      <a href="#karnataka">Karnataka</a>
-    </div>
-    <input type="text" id="searchInput" placeholder="Search dishes...">
-    <button onclick="toggleTheme()">🌓 Toggle Theme</button>
-  </nav>
-
-
-  <main id="mainContent"></main>
-
-  <!-- Map Section -->
-  <div class="map-container">
-    <h2>📍 Sample Food Spot</h2>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.0717794973933!2d78.46783817516391!3d17.40641798336133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb973dc3617b39%3A0x8e2eb0b46aa9c6fa!2sParadise%20Biryani!5e0!3m2!1sen!2sin!4v1681200000000"
-      allowfullscreen=""
-      loading="lazy"
-    ></iframe>
-  </div>
-
-  <footer>
-    &copy; 2025 Flavor Finder | Explore the taste of the South 🌶️
-  </footer>
-
-  <!-- Floating Recipe Modal -->
-  <div id="recipeModal" class="modal" style="display:none;">
-      <div class="rating" id="modalRating"></div>
-      <center></center>
-    </div>
-  </div>
-  
+    <script src="script.js"></script>
 </body>
 </html>
